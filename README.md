@@ -35,51 +35,63 @@ grunt.initConfig({
 });
 ```
 
+        googleApiKey: '',
+        sourceLanguageCode: 'en',
+        srcPath: './il8n/**/en.json',
+        restrictToLanguages: []
+
 ### Options
 
-#### options.separator
+#### options.googleApiKey
 Type: `String`
-Default value: `',  '`
+Default value: ``
 
-A string value that is used to do something with whatever.
+The API key used to access Google Translation services.
 
-#### options.punctuation
+#### options.sourceLanguageCode
 Type: `String`
-Default value: `'.'`
+Default value: `en`
 
-A string value that is used to do something else with whatever else.
+The language code that will be treated as the "source".
+
+#### options.srcPath
+Type: `String`
+Default value: `./il8n/**/en.json`
+
+The path Grunt will use to find the available source files.
+
+#### options.restrictToLanguages
+Type: `Array`
+Default value: `[]`
+
+If included, the translation will be limited to the language codes provided in the array.  For example:
+
+['de','fr']
+
+will only create German and French translations.
 
 ### Usage Examples
 
-#### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
+This example will first generate Spanish and German translations from English.  It will then USE the German translation as the source, and generate a French translation.
 
 ```js
 grunt.initConfig({
-  google_translate: {
-    options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-});
-```
-
-#### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
-
-```js
-grunt.initConfig({
-  google_translate: {
-    options: {
-      separator: ': ',
-      punctuation: ' !!!',
-    },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-});
+    google_translate: {
+      default_options: {
+        options: {
+            googleApiKey: '',
+            restrictToLanguages: ['es', 'de']
+        }
+      },
+    german_to_french: {
+        options: {
+            googleApiKey: '',
+            restrictToLanguages: ['fr'],
+            sourceLanguageCode: 'de'
+        }
+      }
+    }
+ });
 ```
 
 ## Contributing
