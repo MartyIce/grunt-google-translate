@@ -167,7 +167,7 @@ module.exports = function(grunt) {
 
                 for(var i = 0, count = fragmentsToTranslate.length; i < count; i++) {
                     var frag = fragmentsToTranslate[i];
-                    frag.translatedObject[frag.propertyName] = result.data.translations[i].translatedText;
+                    frag.translatedObject[frag.propertyName] = result.data.translations[i].translatedText.replace('&#39;', '\'');
                 }
 
                 deferred.resolve();
