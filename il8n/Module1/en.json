@@ -1,0 +1,9 @@
+{
+    "TESTING": {
+        "SUBVALUE": {
+            "TEXT1": "Login",
+            "TEXT2": "User Name",
+            "TEXT3": "Password"
+        }
+    }
+}
