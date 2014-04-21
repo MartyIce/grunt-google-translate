@@ -35,6 +35,11 @@
     "cheerio": "^0.15.0",
     "q": "^1.0.1"
   },
+"dependencies": {
+    "restler": "^3.2.1",
+    "cheerio": "^0.15.0",
+    "q": "^1.0.1"
+},
   "peerDependencies": {
     "grunt": "~0.4.4"
   },
