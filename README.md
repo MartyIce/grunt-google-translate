@@ -35,11 +35,6 @@ grunt.initConfig({
 });
 ```
 
-        googleApiKey: '',
-        sourceLanguageCode: 'en',
-        srcPath: './il8n/**/en.json',
-        restrictToLanguages: []
-
 ### Options
 
 #### options.googleApiKey
@@ -79,13 +74,15 @@ grunt.initConfig({
     google_translate: {
       default_options: {
         options: {
-            googleApiKey: '',
+            srcPath: './il8n/**/en.json'
+            sourceLanguageCode: 'en',
+            googleApiKey: '<INSERT GOOGLE API KEY HERE>',
             restrictToLanguages: ['es', 'de']
         }
       },
     german_to_french: {
         options: {
-            googleApiKey: '',
+            googleApiKey: '<INSERT GOOGLE API KEY HERE>',
             restrictToLanguages: ['fr'],
             sourceLanguageCode: 'de'
         }
